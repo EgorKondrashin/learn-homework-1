@@ -39,7 +39,8 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    print(determine_occupation(age))
+    result = determine_occupation(age)
+    print(result)
 
 
 if __name__ == "__main__":
