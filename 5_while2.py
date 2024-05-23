@@ -29,7 +29,9 @@ def ask_user(answers_dict):
     while True:
         question_user = input('Введите свой вопрос:\n')
         for key, value in answers_dict.items():
-            if question_user.lower().strip() in key:
+            if isinstance(key, str) and question_user.lower().strip() == key:
+                print(value)
+            elif isinstance(key, tuple) and question_user.lower().strip() in key:
                 if key == ('пока', 'всего хорошего', 'до встречи'):
                     print(value)
                     return

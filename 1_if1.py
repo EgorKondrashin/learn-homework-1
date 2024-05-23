@@ -14,8 +14,6 @@
 
 """
 
-age = int(input('Сколько вам лет?\n'))
-
 
 def determine_occupation(age: int):
     if age >= 1 and age <= 3:
@@ -39,6 +37,7 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
+    age = int(input('Сколько вам лет?\n'))
     result = determine_occupation(age)
     print(result)
 

@@ -17,13 +17,13 @@
 
 
 def check_string(str1, str2):
-    if type(str1) is str and type(str2) is str:
+    if isinstance(str1, str) and isinstance(str2, str):
         if str1 == str2:
             return 1
-        elif str2 == 'learn':
-            return 3
         elif len(str1) > len(str2):
             return 2
+        elif str2 == 'learn':
+            return 3
     else:
         return 0
 
@@ -37,7 +37,7 @@ def main():
     print(check_string(1, '1'))  # 0
     print(check_string(1, 1))  # 0
     print(check_string('привет тебе', 'привет'))  # 2
-    print(check_string('Python', 'learn'))  # 3
+    print(check_string('Python', 'learn'))  # 2
     print(check_string('1', '2'))  # None
     print(check_string('привет', 'привет тебе'))  # None
 
