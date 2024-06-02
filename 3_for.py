@@ -16,12 +16,28 @@
 * Посчитать и вывести среднее количество продаж всех товаров
 """
 
+product_list = [
+    {'product': 'iPhone 12', 'items_sold': [363, 500, 224, 358, 480, 476, 470, 216, 270, 388, 312, 186]}, 
+    {'product': 'Xiaomi Mi11', 'items_sold': [317, 267, 290, 431, 211, 354, 276, 526, 141, 453, 510, 316]},
+    {'product': 'Samsung Galaxy 21', 'items_sold': [343, 390, 238, 437, 214, 494, 441, 518, 212, 288, 272, 247]},
+  ]
+
+
 def main():
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
-    
+    total_sold = 0
+    for product in product_list:
+        sum_sold = sum(product['items_sold'])
+        avg_sum_sold = sum(product['items_sold']) / len(product['items_sold'])
+        total_sold += sum(product['items_sold'])
+        print(f'Суммарное количество продаж для товара {product["product"]}: {sum_sold},\n'
+              f'Среднее количество продаж для товара {product["product"]}: {round(avg_sum_sold, 2)}')
+    print(f'Суммарное количество продаж для всех товаров: {total_sold}\n'
+          f'Среднее количество продаж для всех товаров: {round(total_sold / len(product_list), 2)}')
+
+
 if __name__ == "__main__":
     main()

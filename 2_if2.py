@@ -15,12 +15,32 @@
 
 """
 
+
+def check_string(str1, str2):
+    if isinstance(str1, str) and isinstance(str2, str):
+        if str1 == str2:
+            return 1
+        elif len(str1) > len(str2):
+            return 2
+        elif str2 == 'learn':
+            return 3
+    else:
+        return 0
+
+
 def main():
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
-    
+    print(check_string('1', '1'))  # 1
+    print(check_string(1, '1'))  # 0
+    print(check_string(1, 1))  # 0
+    print(check_string('привет тебе', 'привет'))  # 2
+    print(check_string('Python', 'learn'))  # 2
+    print(check_string('1', '2'))  # None
+    print(check_string('привет', 'привет тебе'))  # None
+
+
 if __name__ == "__main__":
     main()
